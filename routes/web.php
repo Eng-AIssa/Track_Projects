@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    /*return view('auth/login');*/
+    return redirect(RouteServiceProvider::HOME);
 });
 
 Route::get('/dashboard', function () {
@@ -23,16 +25,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-
-
-
-
-
-
-Route::get('lara',[\Laratrust\Http\Controllers\RolesAssignmentController::class,'index'])->middleware(['auth'])->name('lara');
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth']);
 
 
 Route::resource('user',\App\Http\Controllers\UserController::class)->middleware(['auth']);

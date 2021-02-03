@@ -26,7 +26,7 @@
                     <div class=" d-flex flex-md-row flex-column justify-content-around align-items-center ">
                         @role('administrator')
                         <div class="text-center text-secondary"> <h4> قوائم الموظفين </h4> <a class="btn btn-primary m-3 btn-size centralized" href="{{route('user.index')}} " style=" background: url('img/employees.jpg') no-repeat; background-size: contain "></a> </div>
-                        <div class="text-center text-secondary"> <h4>  تعيين الادوار والاذونات</h4> <a class="btn btn-primary m-3 btn-size centralized" href="{{route('lara')}}" style=" background: url('img/rolles.jpeg') no-repeat; background-size: contain "></a> </div>
+                        <div class="text-center text-secondary"> <h4>  تعيين الادوار والاذونات</h4> <a class="btn btn-primary m-3 btn-size centralized" href="{{route('laratrust.roles-assignment.index')}}" style=" background: url('img/rolles.jpeg') no-repeat; background-size: contain "></a> </div>
                         @endrole
                     </div>
                 </div>

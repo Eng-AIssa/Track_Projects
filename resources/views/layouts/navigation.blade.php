@@ -21,7 +21,7 @@
                     <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
                         {{ __('Employees') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('lara')" :active="request()->routeIs('lara')">
+                    <x-nav-link :href="route('laratrust.roles-assignment.index')" :active="request()->routeIs('laratrust.roles-assignment.index')">
                         {{ __('Roles & permissions') }}
                     </x-nav-link>
                 </div>
