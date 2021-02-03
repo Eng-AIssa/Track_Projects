@@ -49,24 +49,12 @@ class UpdateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($id)
     {
-        $updates =null;
-        if ($request->process_number  != null) {
-            $processes = Process::all();
-            foreach ($processes as $process) {
-                if ($process->id == $request->process_number) {
-                    $updates = Process::with('updates')->find($request->process_number);
-                    //return $updates;
-                    return view('updates')->with(compact('updates'));
-                }
-            }
-            $updates = 'none';
-            return view('updates')->with(compact('updates'));
-        }
+        $updates = Update::where('process_id',$id)->get();
         return view('updates')->with(compact('updates'));
     }
 
@@ -102,5 +90,21 @@ class UpdateController extends Controller
     public function destroy(Update $update)
     {
         //
+    }
+
+    public function search(Request $request){
+
+        $updates =null;
+        if ($request->process_number  != null) {
+
+            $updates = Update::where('process_id',$request->process_number)->get();
+            if(!$updates->isEmpty())
+                return view('updates')->with(compact('updates'));
+
+
+            $updates = 'none';
+            return view('updates')->with(compact('updates'));
+        }
+        return view('updates')->with(compact('updates'));
     }
 }

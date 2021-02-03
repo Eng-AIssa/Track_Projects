@@ -12,23 +12,23 @@
             @if($my_process == null)
                 <div class="row ">
                     <div class="input-group mb-3 d-flex justify-content-center">
-                        <form method="POST" action="{{route('find_process')}}">
+                        <form method="get" action="{{route('PSearch')}}">
                             @csrf
                             <button class="btn btn-outline-secondary" type="submit" id="process_search" name="process_search">Search</button>
-                            <input type="text" class="" id="process_number" name="process_number" placeholder="Project ID" >
+                            <input type="text" class="rounded" id="process_number" name="process_number" placeholder="Project ID">
                         </form>
                     </div>
                 </div>
 
 
             @elseif($my_process == 'none')
-                <div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-center">
                     <h1 class="m-5 d-flex justify-content-center">
                         لا يوجد مشروع بهذا الرقم
                     </h1>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <a class="btn m-3 btn-size centralized" href="{{route('my_process')}} " >Back</a>
+                    <a class="btn m-3 btn-size centralized" href="{{route('PSearch')}} " >Back</a>
                     <a class="btn  m-3 btn-size centralized" href="{{route('dashboard')}} " >Home</a>
                 </div>
 
@@ -36,10 +36,10 @@
 
 
                 <div class="input-group mb-3 d-flex justify-content-center">
-                    <form method="post" action="{{route('find_process')}}">
+                    <form method="get" action="{{route('PSearch')}}">
                         @csrf
                         <button class="btn btn-outline-secondary" type="submit" id="process_search" name="process_search">Search</button>
-                        <input type="text" class="" id="process_number" name="process_number" placeholder="Project ID" >
+                        <input type="text" class="rounded" id="process_number" name="process_number" placeholder="Project ID" >
                     </form>
                 </div>
 

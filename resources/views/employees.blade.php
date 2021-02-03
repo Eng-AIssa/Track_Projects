@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Employees List') }}
         </h2>
-            <a class="btn  btn2-size  centralized" href="{{route('new_user')}}">Add employee</a>
+            <a class="btn  btn2-size  centralized" href="{{route('user.create')}}">Add employee</a>
         </div>
     </x-slot>
 
@@ -35,7 +35,7 @@
                         <td>{{$employee->position->name}}</td>
                         <td>{{$employee->status}}</td>
                         @role('administrator')
-                        <form method="post" action="{{route('details')}}">
+                        <form method="get" action="{{route('user.show',['user'=>$employee->id])}}">
                             @csrf
                             <input id='user_id' name="user_id" type="hidden" value="{{$employee->id}}">
                             <td><button type="submit" class="btn btn-dark" >Details</button></td>

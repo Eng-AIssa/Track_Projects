@@ -7,7 +7,7 @@
 
     <div class="py-12 xl:mx-60 sm:mx-10 md:mx-16 mx-10">
 
-        <form dir="rtl" class="grid md:grid-cols-2 grid-cols-1 gap-y-8 text-left pt-14 md:pl-16 pl-24  border border-dark rounded shadow" method="post" action="{{route('store_process')}}">
+        <form dir="rtl" class="grid md:grid-cols-2 grid-cols-1 gap-y-8 text-left pt-14 md:pl-16 pl-24  border border-dark rounded shadow" method="post" action="Process">
             @csrf
 
 

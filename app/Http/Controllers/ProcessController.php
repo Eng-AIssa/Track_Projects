@@ -77,20 +77,9 @@ class ProcessController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Process $Process)
     {
-        $my_process =null;
-        if ($request->process_number  != null) {
-            $processes_number = Process::all();
-            foreach ($processes_number as $process) {
-                if ($process->id == $request->process_number) {
-                    $my_process = Process::with('user')->find($request->process_number);
-                    return view('process')->with(compact('my_process'));
-                }
-            }
-            $my_process = 'none';
-            return view('process')->with(compact('my_process'));
-        }
+        $my_process = $Process;
         return view('process')->with(compact('my_process'));
     }
 
@@ -126,5 +115,20 @@ class ProcessController extends Controller
     public function destroy(Process $process)
     {
         //
+    }
+
+
+    public function search(Request $request){
+        $my_process =null;
+        if ($request->process_number  != null) {
+
+            $my_process = Process::with('user')->find($request->process_number);
+            if($my_process != null)
+                return view('process')->with(compact('my_process'));
+
+            $my_process = 'none';
+            return view('process')->with(compact('my_process'));
+        }
+        return view('process')->with(compact('my_process'));
     }
 }

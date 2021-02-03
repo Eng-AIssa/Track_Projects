@@ -8,7 +8,7 @@
 
     <div class="py-12">
 
-        <form class="grid md:grid-cols-2 grid-cols-1 text-right md:pr-16 pr-20 lg:max-w-4xl md:max-w-3xl sm:max-w-lg max-w-md mx-auto bg-white shadow pt-10 rounded" method="POST" action="{{ route('private') }}">
+        <form class="grid md:grid-cols-2 grid-cols-1 text-right md:pr-16 pr-20 lg:max-w-4xl md:max-w-3xl sm:max-w-lg max-w-md mx-auto bg-white shadow pt-10 rounded" method="POST" action="{{ route('user.store') }}">
             @csrf
 
             <div class=" a">

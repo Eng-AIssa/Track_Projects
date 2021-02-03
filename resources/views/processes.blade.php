@@ -5,7 +5,7 @@
             {{ __('Projects List') }}
         </h2>
 
-        <a class="btn  btn2-size mr-3 centralized" href="{{route('new_process')}}">Add Project</a>
+        <a class="btn  btn2-size mr-3 centralized" href="{{route('Process.create')}}">Add Project</a>
         </div>
     </x-slot>
 
@@ -22,6 +22,8 @@
                     <th scope="col">Phone</th>
                     <th scope="col">assigned to</th>
                     <th scope="col">Price</th>
+                    <th scope="col">actions</th>
+
                 </tr>
                 </thead>
                 <tbody >
@@ -33,6 +35,7 @@
                         <td>{{$process->phone}}</td>
                         <td>{{$process->user->name}}</td>
                         <td>{{$process->price}}</td>
+                        <td><a class="btn btn-dark" href="{{route('Process.show',['Process'=>$process->id])}}">Details</a><a class="btn btn-dark" href="{{route('update.show',['update'=>$process->id])}}">Updates</a></td>
                     </tr>
                 @endforeach
                 </tbody>

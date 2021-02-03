@@ -15,7 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('Process.index')" :active="request()->routeIs('find_process')">
+                        {{ __('Projects') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                        {{ __('Employees') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('lara')" :active="request()->routeIs('lara')">
+                        {{ __('Roles & permissions') }}
+                    </x-nav-link>
                 </div>
+
             </div>
 
             <!-- Settings Dropdown -->

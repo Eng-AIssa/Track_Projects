@@ -11,7 +11,7 @@
 
             <div class="container d-flex justify-content-center text-center">
 
-            <form class="update-body" id="update_form" name="update_form" method="POST" action="{{route('add_update')}}">
+            <form class="update-body" id="update_form" name="update_form" method="POST" action="{{route('update.store')}}">
                 @csrf
 
                 <div>
